@@ -89,4 +89,4 @@ source /opt/boxen/env.sh
 source $ZSH/oh-my-zsh.sh
 
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
-	[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+  [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
