@@ -51,6 +51,10 @@ alias gs='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
+alias docker_eval='eval "$(docker-machine env default)"'
+
+EDITOR="~/bin/subl"
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
