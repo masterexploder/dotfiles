@@ -5,7 +5,10 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="kzsh"
+address=/dev/127.0.0.1
+ZSH_THEME="cobalt2"
+
+export GPG_TTY=$(tty)
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -54,7 +57,7 @@ alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG
 alias docker_eval='eval "$(docker-machine env default)"'
 
 EDITOR="~/bin/subl"
-
+export BOXEN_SOCKET_DIR="/opt/boxen/project-sockets"
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -87,10 +90,13 @@ EDITOR="~/bin/subl"
 plugins=(git brew gem rails rake autojump safe-paste bundler rbenv)
 
 # Customize to your needs...
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:~/Library/Python/2.7/bin
 
-source /opt/boxen/env.sh
+# source /opt/boxen/env.sh
 source $ZSH/oh-my-zsh.sh
+
+eval "$(nodenv init -)"
 
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
   [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
