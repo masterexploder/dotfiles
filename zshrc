@@ -100,3 +100,6 @@ eval "$(nodenv init -)"
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
   [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
+
+export YVM_DIR=/usr/local/opt/yvm
+[ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
